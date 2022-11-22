@@ -5,28 +5,28 @@
 //   grid-template-columns: 1fr 1fr 1fr;
 // }
 
+
 .container {
   box-sizing: border-box;
-  // background-color: antiquewhite;
 }
 
 h1 {
   margin-left: 35%;
 }
 
-.row {
-  .card {
-    margin-top: 15px !important;
-    box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.137) !important;
-    display: grid;
-    justify-content: center;
-  }
+.card {
+  margin-top: 15px !important;
+  box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.137) !important;
+  display: grid;
+  justify-content: center;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-top: 15px;
+
 }
+
 
 .card-img-top {
   border-radius: 15px !important;
 }
-
-// .card-body {
-//   background-color: grey;
-// }
