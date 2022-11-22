@@ -1,15 +1,32 @@
 // Specific CSS for your home-page
 
 // body {
-//   display: flex;
-
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
 // }
 
 .container {
-  display:flex;
+  box-sizing: border-box;
+  // background-color: antiquewhite;
 }
 
-// .card {
-//   display:flex;
-//   justify-content: center;
+h1 {
+  margin-left: 35%;
+}
+
+.row {
+  .card {
+    margin-top: 15px !important;
+    box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.137) !important;
+    display: grid;
+    justify-content: center;
+  }
+}
+
+.card-img-top {
+  border-radius: 15px !important;
+}
+
+// .card-body {
+//   background-color: grey;
 // }
