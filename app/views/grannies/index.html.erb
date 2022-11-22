@@ -1,0 +1,19 @@
+<div class="p-5">
+  <div class="cards">
+      <% @grannies.each do | granny | %>
+        <%= link_to grannies_path, class: "text-decoration-none text-dark" do %>
+          <div class="card-bookmark">
+            <img src="https://memepedia.ru/wp-content/uploads/2018/10/babushka.jpg">
+            <div class="card-bookmark-infos p-2">
+              <div>
+                <h3 class="mb-4"><%= granny.first_name %> (<%= granny.age %>)</h3>
+                <p><strong><%= granny.price_per_day %> EUR</strong> per day</p>
+                <p class="text-decoration-none"><strong>5</strong> bookings</p>
+              </div>
+              <p class="card-rating">8.0</p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>

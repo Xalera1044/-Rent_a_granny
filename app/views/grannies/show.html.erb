@@ -1,0 +1,13 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1575467678930-c7acd65d6470?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);">
+  <div class="container">
+    <h1><%= @granny.first_name %> <%= @granny.last_name %></h1>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <p>Bio: <%= @granny.description %></p>
+  <P>Baking skills:  <%= @granny.baking_skill %></P>
+  <p>Lullaby skills:  <%= @granny.lullaby_skill %></p>
+  <p>Storytelling skills:  <%= @granny.storytelling_skill %></p>
+  <p>Price per Day €: <%= @granny.price_per_day %></p>
+</div>
