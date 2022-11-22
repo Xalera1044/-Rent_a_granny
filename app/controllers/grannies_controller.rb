@@ -5,7 +5,6 @@ class GranniesController < ApplicationController
 
   def show
     @granny = Granny.find(params[:id])
-    @grannies = @grannies.reviews
   end
 
   def new
