@@ -1,7 +1,7 @@
 <div class="p-5">
   <div class="cards">
       <% @grannies.each do | granny | %>
-        <%= link_to grannies_path, class: "text-decoration-none text-dark" do %>
+        <%= link_to granny_path(granny.id), class: "text-decoration-none text-dark" do %>
           <div class="card-bookmark">
             <img src="https://memepedia.ru/wp-content/uploads/2018/10/babushka.jpg">
             <div class="card-bookmark-infos p-2">
