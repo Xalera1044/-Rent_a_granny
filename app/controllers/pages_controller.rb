@@ -1,7 +1,4 @@
 class PagesController < ApplicationController
-  def home
-  end
-
   def index
     @grannies = Granny.all
   end
@@ -24,9 +21,8 @@ class PagesController < ApplicationController
     end
   end
 
-
-
   private
+
   def granny_params
     params.require(:granny).permit(:first_name, :last_name, :age, :description, :lullaby_skill, :storytelling_skill, :baking_skill, :availability, :price_per_day)
   end

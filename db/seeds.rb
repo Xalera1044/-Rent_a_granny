@@ -7,5 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Creating Grannies"
-
-Grannie.create(first_name: "Laura", last_name: "Severus", age: "75", alive: "For Now")
+Granny.destroy_all
+Granny.create(first_name: "Laura", last_name: "Severus", age: "75", alive: "For Now")
+Granny.create(first_name: "Laura", last_name: "Severus", age: "75", alive: "false")
+Granny.create(first_name: "Laura", last_name: "Severus", age: "75", alive: "false")
+Granny.create(first_name: "Laura", last_name: "Severus", age: "75", alive: "For Now")
+Granny.create(first_name: "Laura", last_name: "Severus", age: "75", alive: "For Now")
+Granny.create(first_name: "Laura", last_name: "Severus", age: "75", alive: "For Now")
