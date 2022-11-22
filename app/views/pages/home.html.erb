@@ -1,3 +1,26 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<h3>hi</h3>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1634089916298-9fa27180526c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+  <div class="container">
+    <h1>Rent a <strong>Granny!</strong></h1>
+    <p>Everyone come and get your granny</p>
+    <a class="btn btn-primary" href="#">Book</a>
+  </div>
+</div>
+
+
+<div class="container" >
+  <div class="row d-inline-flex p-2 bd-highlight">
+    <% @grannies.each do |granny| %>
+      <div class="col-md-4">
+        <div class="card" style="width: 21rem;">
+          <%# <%= image_tag granny.image_url, class:"card-img-top" %>
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" alt="card image cap">
+            <div class="card-body">
+              <h4 class="card-title"><%= granny.first_name %> <%= granny.last_name %></h4>
+              <h5>Age <%= granny.age%> </h5>
+              <p>Alive? <%= granny.alive%></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
