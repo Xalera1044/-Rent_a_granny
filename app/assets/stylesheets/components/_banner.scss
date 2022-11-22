@@ -25,11 +25,19 @@
   border-color: black;
 }
 
-// @media (min-width: 790px) {
-//   .banner {
-//     background-size:cover;
-//     background-size: contain;
-//     // background-position:10px 5px;
-//   }
-// }
+@media(max-width: 992px) {
+  .banner {
+    background-size:cover;
+    background-size: contain;
+    background-position:10px 5px;
+  }
 
+}
+
+@media(max-width: 390px) {
+  .banner {
+    background-size:cover !important;
+    background-size: contain !important;
+    background-position:10px 5px !important;
+  }
+}
