@@ -3,7 +3,7 @@
       <% @grannies.each do | granny | %>
         <%= link_to granny_path(granny.id), class: "text-decoration-none text-dark" do %>
           <div class="card-bookmark">
-            <img src="https://memepedia.ru/wp-content/uploads/2018/10/babushka.jpg">
+            <img src= <%= granny.image_url %>>
             <div class="card-bookmark-infos p-2">
               <div>
                 <h3 class="mb-4"><%= granny.first_name %> (<%= granny.age %>)</h3>

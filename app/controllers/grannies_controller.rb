@@ -13,17 +13,16 @@ class GranniesController < ApplicationController
 
   def create
     @granny = Granny.new(granny_params)
+    @granny.user = current_user
     if @granny.save
-      redirect_to granny_path(@granny)
+      redirect_to grannies_path
     else
-      render :new, status: :unprocessable_entity
+      render :new_granny, status: :unprocessable_entity
     end
   end
 
-
-
   private
   def granny_params
-    params.require(:granny).permit(:first_name, :last_name, :age, :description, :lullaby_skill, :storytelling_skill, :baking_skill, :availability, :price_per_day)
+    params.require(:granny).permit(:first_name, :last_name, :age, :description, :lullaby_skill, :storytelling_skill, :baking_skill, :availability, :price_per_day, :image_url)
   end
 end
