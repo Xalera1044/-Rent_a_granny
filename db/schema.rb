@@ -30,13 +30,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_150740) do
     t.string "first_name"
     t.string "last_name"
     t.integer "age"
-    t.boolean "alive"
+    t.string "alive"
     t.text "description"
     t.integer "lullaby_skill"
     t.integer "storytelling_skill"
     t.integer "baking_skill"
     t.string "availability"
     t.integer "price_per_day"
+    t.string "image_url"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
