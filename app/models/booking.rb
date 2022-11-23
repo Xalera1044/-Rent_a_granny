@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
-  belongs_to :grannies
-  belongs_to :users
+  belongs_to :granny
+  belongs_to :user
+  # validates :created_at
 end

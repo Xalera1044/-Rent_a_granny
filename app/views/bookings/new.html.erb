@@ -1,0 +1,18 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1551727028-e050e6ed2f62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80);">
+  <div class="container">
+  </div>
+</div>
+
+<div class="container">
+  <div class="new-lists">
+    <div class="new-list">
+      <h1>Create a new <strong>booking</strong> !</h1>
+      <%= simple_form_for [ @granny, @booking ] do |f| %>
+        <%= f.input :occurs_on, label: "Booking date" %>
+        <%= f.input :message %>
+        <%= f.submit "Create", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
