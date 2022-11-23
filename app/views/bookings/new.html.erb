@@ -7,11 +7,11 @@
 <div class="container">
   <div class="new-lists">
     <div class="new-list">
-      <h1>Create a new <strong>booking</strong> !</h1>
+      <h1 class="mt-3">Create a new <strong>booking</strong> !</h1>
       <%= simple_form_for [ @granny, @booking ] do |f| %>
-        <%= f.input :occurs_on, label: "Booking date" %>
+        <%= f.input :occurs_on, label: "Booking date", order: [:day, :month, :year] %>
         <%= f.input :message %>
-        <%= f.submit "Create", class: "btn btn-primary" %>
+        <%= f.submit "Create", class: "btn btn-success" %>
       <% end %>
     </div>
   </div>
