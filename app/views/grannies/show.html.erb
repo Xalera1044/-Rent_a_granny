@@ -5,6 +5,10 @@
 </div>
 
 <div class="container mt-3">
+  <%= link_to "Book me", new_granny_booking_path(@granny), class:"btn btn-success" %>
+</div>
+
+<div class="container mt-3">
   <p>Bio: <%= @granny.description %></p>
   <P>Baking skills:  <%= @granny.baking_skill %></P>
   <p>Lullaby skills:  <%= @granny.lullaby_skill %></p>
