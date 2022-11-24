@@ -1,13 +1,13 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1575467678930-c7acd65d6470?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);">
-  <div class="container show">
-    <h1 id="show-h1"><%= @granny.first_name %> <%= @granny.last_name %></h1>
-    <%= link_to "Book me", new_granny_booking_path(@granny), class:"btn btn-lg btn-success mt-2" %>
+  <div class="show-container">
+      <h1 id="show-h1"><%= @granny.first_name %> <%= @granny.last_name %></h1>
+      <%= link_to "Book me", new_granny_booking_path(@granny), class:"btn btn-lg btn-success mt-2" %>
   </div>
 </div>
 
 <div class="container mt-3">
   <div class="row">
-      <div class="col">
+      <div class="col-8">
         <div class="card">
           <div id="card-bio" class="card-body">
             <h2 class="card-title"><%= @granny.first_name %> <%= @granny.last_name %></h2>
@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-    <div class="col">
+    <div class="col-4">
       <div class="card">
         <div id="card-skills" class="card-body">
           <h2 class="card-title">Skills:</h2>
