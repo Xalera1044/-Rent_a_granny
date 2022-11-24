@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     # @booking.granny = Granny.find(params[:granny_id])
     @booking.user = current_user
+    @booking.status = "pending"
     if @booking.save
       redirect_to bookings_path
     else
@@ -23,7 +24,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:message, :occurs_on)
+    params.require(:booking).permit(:message, :occurs_on, :user_id)
   end
 
   def set_booking
