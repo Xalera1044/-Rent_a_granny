@@ -13,17 +13,39 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.granny = Granny.find(params[:granny_id])
     @booking.user = current_user
+    @booking.confirm = "pending"
     if @booking.save
       redirect_to bookings_path
     else
-      redirect_to grannies_path
+      render :new
     end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.confirm = "accepted"
+    @booking.save
+    redirect_to edit_granny_booking_path
+  end
+
+  def reject
+    @booking = Booking.find(params[:id])
+    @booking.confirm = "rejected"
+    @booking.save
+    redirect_to edit_granny_booking_path
   end
 
   private
 
+
+
+
   def booking_params
-    params.require(:booking).permit(:message, :occurs_on)
+    params.require(:booking).permit(:message, :occurs_on, :confirm)
   end
 
   def set_booking
