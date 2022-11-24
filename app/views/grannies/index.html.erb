@@ -6,7 +6,7 @@
           class: "form-control",
           placeholder: "Find a Granny"
         %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= submit_tag "Find a Granny", class: "btn btn-success" %>
       <% end %>
     </div>
     <div class="cards">
@@ -20,7 +20,7 @@
                   <p class="mb-3"><strong><%= granny.price_per_day %> EUR</strong> per day</p>
                   <p class="pb-3"><%= granny.description %></p>
                 </div>
-                <p class="card-rating">8.0</p>
+                <p class="card-rating"><%= rand(6.0..10).round(1) %></p>
               </div>
             </div>
           <% end %>
