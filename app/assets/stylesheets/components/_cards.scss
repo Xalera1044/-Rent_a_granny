@@ -3,11 +3,12 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 24px;
   justify-content: space-evenly;
+  padding: 10px;
 }
 
 .card-bookmark {
-  height: 350px;
-  width: 300px;
+  height: 375px;
+  width: 325px;
   border-radius: 20px;
   overflow: hidden;
   background: white;
@@ -17,7 +18,7 @@
 }
 
 .card-booking {
-  height: 450px;
+  height: 400px;
   width: 300px;
   border-radius: 20px;
   padding: 16px;
