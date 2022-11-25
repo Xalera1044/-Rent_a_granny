@@ -1,0 +1,41 @@
+.banner #show-h1 {
+  font-size: 64px;
+}
+
+.btn-success {
+  color: rgb(255, 255, 255);
+}
+
+.banner .show-container{
+  text-align: center;
+}
+#card-skills {
+  font-size: 24px;
+  text-align: left;
+  padding: 50px;
+}
+
+#card-bio {
+  text-align: left;
+  padding: 50px;
+}
+
+#card-bio > p {
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+#card-bio > h3 {
+  font-weight: 900;
+  opacity: 0.8;
+}
+
+#card-bio > h2 {
+  font-weight: 900;
+  opacity: 0.8;
+}
+
+#card-skills > h2 {
+  font-weight: 900;
+  opacity: 0.8;
+}

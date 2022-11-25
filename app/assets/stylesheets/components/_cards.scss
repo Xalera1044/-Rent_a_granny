@@ -1,6 +1,6 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 24px;
   justify-content: space-evenly;
 }
@@ -9,6 +9,18 @@
   height: 350px;
   width: 300px;
   border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  justify-content: space-evenly;
+  text-decoration: none;
+}
+
+.card-booking {
+  height: 450px;
+  width: 300px;
+  border-radius: 20px;
+  padding: 16px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
@@ -63,6 +75,7 @@
   height: 50px;
   color: white;
   padding: 14px 12px 12px 13px;
-  border-radius: 20px;
-  background: gray;
+  border-radius: 50%;
+  background: rgb(64, 226, 154);
+  font-size: 24px;
 }

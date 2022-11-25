@@ -1,17 +1,34 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1575467678930-c7acd65d6470?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);">
-  <div class="container">
-    <h1><%= @granny.first_name %> <%= @granny.last_name %></h1>
+  <div class="show-container">
+      <h1 id="show-h1"><%= @granny.first_name %> <%= @granny.last_name %></h1>
+      <%= link_to "Book me", new_granny_booking_path(@granny), class:"btn btn-lg btn-success mt-2" %>
   </div>
 </div>
 
 <div class="container mt-3">
-  <%= link_to "Book me", new_granny_booking_path(@granny), class:"btn btn-success" %>
-</div>
-
-<div class="container mt-3">
-  <p>Bio: <%= @granny.description %></p>
-  <P>Baking skills:  <%= @granny.baking_skill %></P>
-  <p>Lullaby skills:  <%= @granny.lullaby_skill %></p>
-  <p>Storytelling skills:  <%= @granny.storytelling_skill %></p>
-  <p>Price per Day €: <%= @granny.price_per_day %></p>
+  <div class="row">
+      <div class="col-8">
+        <div class="card">
+          <div id="card-bio" class="card-body">
+            <h2 class="card-title"><%= @granny.first_name %> <%= @granny.last_name %></h2>
+            <h3 class="card_text mt-4">Bio:</h3>
+            <p class="card-text"><%= @granny.description %></p>
+            <h3>Availability:</h3>
+            <p class="card-text"><%= @granny.availability %></p>
+            <h3 >Price:</h3>
+            <p class="card-text"><%= @granny.price_per_day %> €</p>
+          </div>
+        </div>
+      </div>
+    <div class="col-4">
+      <div class="card">
+        <div id="card-skills" class="card-body">
+          <h2 class="card-title">Skills:</h2>
+          <p class="card-text mt-4">📚 Story telling: <%= @granny.storytelling_skill %>/10</p>
+          <p class="card-text">🍰 Baking: <%= @granny.baking_skill %>/10</p>
+          <p class="card-text">🛏 Lullaby: <%= @granny.lullaby_skill %>/10</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

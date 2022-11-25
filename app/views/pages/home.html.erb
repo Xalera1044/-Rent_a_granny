@@ -1,27 +1,29 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1634089916298-9fa27180526c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
-  <div class="container">
+  <div class="container ">
     <h1>Rent a <strong>Granny!</strong></h1>
     <p>Everyone come and get your granny</p>
-    <%= link_to "Search", grannies_path, class: "btn btn-success" %>
+    <%= link_to "Find a Granny", grannies_path, class: "btn btn-lg btn-success" %>
   </div>
 </div>
 
 
 <div class="container">
-<h2 class="d-flex justify-content-center mt-3 mb-3 ">Top 3 Grannies this week 👵🏻</h2>
-  <div class="row y-inline-flex p-2 bd-highlight">
-    <% @grannies.each do |granny| %>
-      <div class="col-md-4">
-        <div class="card-bookmark">
-          <img class="card-img-top" src=<%= granny.image_url %>>
-            <div class="card-body p-2">
-              <h4 class="card-title mb-3"><%= granny.first_name %> <%= granny.last_name %></h4>
-              <h5>Age: <%= granny.age%> </h5>
-              <p class="mb-1">Price: <%= granny.price_per_day%></p>
-              <p>Bio: <%= granny.description %></p>
+<h2 class="d-flex justify-content-center mt-5 mb-5 ">Top 3 Grannies this week 👵🏻</h2>
+  <div class="cards">
+      <% @grannies.each do | granny | %>
+        <%= link_to granny_path(granny.id), class: "text-decoration-none text-dark" do %>
+          <div class="card-bookmark">
+            <img src= <%= granny.image_url %>>
+            <div class="card-bookmark-infos p-2">
+              <div>
+                <h3 class="mb-4"><%= granny.first_name %> (<%= granny.age %>)</h3>
+                <p class="mb-3"><strong><%= granny.price_per_day %> EUR</strong> per day</p>
+                <p class="pb-3"><%= granny.description %></p>
+              </div>
+              <p class="card-rating"><%= rand(6.0..10).round(1) %></p>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-  </div>
+    </div>
 </div>

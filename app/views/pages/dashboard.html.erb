@@ -1,0 +1,41 @@
+<div class="container">
+
+<h1 class="mt-3"> Welcome to your profile</h1>
+
+  <h3 class="mt-3"><strong> Your Grannies </strong></h3>
+        <div class="cards my-5">
+            <% @grannies.each do | granny | %>
+              <%= link_to granny_path(granny.id), class: "text-decoration-none text-dark" do %>
+                <div class="card-bookmark">
+                  <img src= <%= granny.image_url %>>
+                  <div class="card-bookmark-infos p-2">
+                    <div>
+                      <h3 class="mb-4"><%= granny.first_name %> (<%= granny.age %>)</h3>
+                      <p class="mb-3"><strong><%= granny.price_per_day %> EUR</strong> per day</p>
+                      <p class="pb-3"><%= granny.description %></p>
+                    </div>
+                    <p class="card-rating">8.0</p>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+        </div>
+
+
+  <h3 class="mt-5"><strong> Booking Requests for your Grannies </strong></h3>
+      <% @grannies.each do | granny | %>
+        <div class="cards my-5">
+          <% granny.bookings.each do |booking| %>
+            <div class="card-booking">
+              <p><strong>From: </strong></p><%= booking.user.email %>
+              <p class="mt-4" ><strong>Message: </strong></p><%= booking.message %>
+              <p class="mt-4" ><strong>Booking Date: </strong></p><%= booking.occurs_on %>
+              <p class="mt-4" ><strong>Booking Status: </strong></p><%= booking.confirm %>
+              <p></p>
+              <%= link_to "Accept", booking_accept_path(booking), data: {turbo_method: :patch}, class: "btn btn-success" %>
+              <%= link_to "Reject", booking_reject_path(booking), data: {turbo_method: :patch}, class: "btn btn-secondary" %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+</div>
