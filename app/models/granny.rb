@@ -14,7 +14,7 @@ class Granny < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_age,
-    against: [:first_name, :last_name, :age],
+    against: [:first_name, :last_name, :age, :description],
     using: {
       tsearch: { prefix: true }
     }
