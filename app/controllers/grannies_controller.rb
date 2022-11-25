@@ -1,6 +1,10 @@
 class GranniesController < ApplicationController
   def index
-    @grannies = Granny.all
+    if params[:query].present?
+      @grannies = Granny.search_by_name_and_age(params[:query])
+    else
+      @grannies = Granny.all
+    end
   end
 
   def show

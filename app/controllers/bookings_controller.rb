@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.granny = Granny.find(params[:granny_id])
+    @booking.granny = @granny
     @booking.user = current_user
     @booking.confirm = "pending"
     if @booking.save

@@ -1,0 +1,15 @@
+  <div class="row y-inline-flex p-2 bd-highlight">
+    <% @grannies.each do |granny| %>
+      <div class="col-md-4">
+        <div class="card-bookmark">
+          <img class="card-img-top" src=<%= granny.image_url %>>
+            <div class="card-body p-2">
+              <h4 class="card-title mb-3"><%= granny.first_name %> <%= granny.last_name %></h4>
+              <h5>Age: <%= granny.age%> </h5>
+              <p class="mb-1">Price: <%= granny.price_per_day%></p>
+              <p>Bio: <%= granny.description %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
