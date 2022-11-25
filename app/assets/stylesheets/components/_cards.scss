@@ -1,6 +1,6 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 24px;
   justify-content: space-evenly;
 }
@@ -65,5 +65,5 @@
   padding: 14px 12px 12px 13px;
   border-radius: 50%;
   background: rgb(64, 226, 154);
-  font-size: 20px;
+  font-size: 24px;
 }

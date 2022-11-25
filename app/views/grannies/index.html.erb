@@ -1,19 +1,29 @@
 <div class="container">
-  <div class="cards">
-      <% @grannies.each do | granny | %>
-        <%= link_to granny_path(granny.id), class: "text-decoration-none text-dark" do %>
-          <div class="card-bookmark">
-            <img src= <%= granny.image_url %>>
-            <div class="card-bookmark-infos p-2">
-              <div>
-                <h3 class="mb-4"><%= granny.first_name %> (<%= granny.age %>)</h3>
-                <p class="mb-3"><strong><%= granny.price_per_day %> EUR</strong> per day</p>
-                <p class="pb-3"><%= granny.description %></p>
-              </div>
-              <p class="card-rating">8.0</p>
-            </div>
-          </div>
-        <% end %>
+  <div class="search my-5 ">
+      <%= form_with url: grannies_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a Granny"
+        %>
+        <%= submit_tag "Find a Granny", class: "btn btn-success" %>
       <% end %>
     </div>
+    <div class="cards">
+        <% @grannies.each do | granny | %>
+          <%= link_to granny_path(granny.id), class: "text-decoration-none text-dark" do %>
+            <div class="card-bookmark">
+              <img src= <%= granny.image_url %>>
+              <div class="card-bookmark-infos p-2">
+                <div>
+                  <h3 class="mb-4"><%= granny.first_name %> (<%= granny.age %>)</h3>
+                  <p class="mb-3"><strong><%= granny.price_per_day %> EUR</strong> per day</p>
+                  <p class="pb-3"><%= granny.description %></p>
+                </div>
+                <p class="card-rating"><%= rand(6.0..10).round(1) %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
 </div>

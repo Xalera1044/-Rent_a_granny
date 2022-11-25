@@ -11,4 +11,11 @@ class Granny < ApplicationRecord
   validates :baking_skill, presence: true
   validates :availability, presence: true
   validates :price_per_day, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_age,
+    against: [:first_name, :last_name, :age],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
