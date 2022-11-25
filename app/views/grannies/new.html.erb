@@ -6,7 +6,7 @@
       <%= f.input :last_name, label: "Your last name"%>
       <%= f.input :age, label: "Your age" %>
       <%= f.input :description, label: "A little description of yourself"%>
-      <%= f.input :image_url, label: "Add a link to an image of yourself" %>
+      <%= f.input :photo, as: :file, label: "Add an image of yourself" %>
       <%= f.input :baking_skill, label: "Baking skill", collection: 0..10,  as: :radio_buttons %>
       <%= f.input :lullaby_skill, label: "Lullaby skill", collection: 0..10,  as: :radio_buttons %>
       <%= f.input :storytelling_skill, label: "Storytelling skill", collection: 0..10, as: :radio_buttons %>
